@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BGSVG from '../components/BGSVG.astro';
+---
+
+<Layout>
+	<nav class="fixed top-[40px] left-1/2 flex gap-x-16 translate-x-[-50%] z-100 text-black px-6 py-4 rounded-3xl navbar font-[500] items-center justify-between">
+		<div class="rounded-full bg-orange-400 size-10"></div>
+      <div class="flex gap-8">
+          <a href="#about" >About</a>
+          <a href="#works" >Works</a>
+          <a href="#services" >Services</a>
+          <a href="#playground" >Playground</a>
+          <a href="#testimonials" >Testimonials</a>
+      </div>
+    </nav>
+	<main class="w-full h-screen grid grid-cols-1 p-8 pb-20 px-32">
+		<div class="w-full h-full rounded-4xl border border-solid border-gray-300 relative">
+			<BGSVG />
+		</div>
+	</main>
+	<section class="w-full h-screen bg-red-200">
+		TEST
+	</section>
+</Layout>

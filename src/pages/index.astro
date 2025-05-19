@@ -151,6 +151,16 @@ import PaperBG from "../components/PaperBG.astro";
     autoSplit: true,
     onSplit: (self) => {
       gsap.set(self.words, { opacity: "20%" });
+      gsap.to(splitT.words, {
+        scrollTrigger: {
+          trigger: ".split",
+          start: "bottom bottom",
+          end: "center center",
+          scrub: true,
+        },
+        opacity: 1,
+        stagger: 1,
+      });
       return gsap.from(self.lines, {
         scrollTrigger: {
           trigger: ".split",
@@ -170,15 +180,5 @@ import PaperBG from "../components/PaperBG.astro";
     y: 100,
     opacity: 0,
     stagger: 0.05,
-  });
-  gsap.to(splitT.words, {
-    scrollTrigger: {
-      trigger: ".split",
-      start: "bottom bottom",
-      end: "center center",
-      scrub: true,
-    },
-    opacity: 1,
-    stagger: 1,
   });
 </script>

@@ -1,0 +1,35 @@
+<svg
+  width="116"
+  height="20"
+  viewBox="0 0 116 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="scribble1"
+    d="M3.5293 6.6721C10.3714 5.44367 28.0556 2.98788 44.0556 2.98788C35.1082 6.32157 16.2661 13.83 12.4767 17.1984C28.4419 12.6374 70.7925 5.30367 112.477 12.4616"
+    stroke="#FF802C"
+    stroke-width="5.26316"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-dasharray="1.05 1.05"></path>
+</svg>
+<script>
+  import { gsap } from "gsap";
+  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+  gsap.registerPlugin(DrawSVGPlugin);
+
+  gsap.fromTo(
+    document.getElementById("scribble1"),
+    { drawSVG: "0%" },
+    {
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      repeatDelay: 1,
+      drawSVG: "100%",
+      ease: "expo.out",
+      fill: "forwards",
+    }
+  );
+</script>

@@ -6,13 +6,17 @@ import Box2 from "../Box/Box2.astro";
 import Box3 from "../Box/Box3.astro";
 import Box4 from "../Box/Box4.astro";
 import Box5 from "../Box/Box5.astro";
+import Grid from "../Grid.astro";
 ---
 
 <main class="p-4 flex justify-center">
   <div
-    class="w-full grid place-content-center place-items-center leading-tight text-[5vw] pt-[200px] pb-[100px] max-w-[1400px] bg-gr rounded-4xl"
+    class="w-full grid place-content-center place-items-center leading-tight text-[5vw] pt-[200px] pb-[100px] max-w-[1400px] bg-gr rounded-4xl relative z-0"
     id="card-container"
   >
+    <div class="absolute inset-0 -z-1">
+      <Grid />
+    </div>
     <div class="relative h-full">
       <p class="font-semibold tracking-tighter">Product Designer</p>
       <div class="absolute -top-[25px] -left-[45px]">
@@ -27,7 +31,7 @@ import Box5 from "../Box/Box5.astro";
     </div>
     <div class="flex gap-x-4 place-items-center my-6">
       <button
-        class="bg-orange-gr text-white rounded-xl px-8 py-2 font-semibold text-xl flex gap-2"
+        class="bg-orange-gr text-white rounded-xl px-6 py-3 font-semibold text-xl flex gap-2"
       >
         <div
           class="size-[12px] place-self-center"
@@ -44,7 +48,7 @@ import Box5 from "../Box/Box5.astro";
         </div>
       </button>
       <button
-        class="bg-black-gr text-white rounded-xl px-8 py-2 font-semibold text-xl"
+        class="bg-black-gr text-white rounded-xl px-6 py-3 font-semibold text-xl"
       >
         See Works
       </button>
@@ -125,11 +129,12 @@ import Box5 from "../Box/Box5.astro";
   }
 
   .bg-gr {
-    --bg-color: rgb(247, 247, 247);
+    --bg-color: rgb(240, 240, 240);
     --grid-color: rgba(0, 0, 0, 0.15);
-    --strokeWidth: 1px;
-    --squareSize: 50px;
-    background-image: radial-gradient(transparent 0%, var(--bg-color) 60%),
+    --strokeWidth: 2px;
+    --squareSize: 65px;
+    background-image: 
+    /* radial-gradient(transparent 0%, var(--bg-color) 50%),
       repeating-linear-gradient(
         transparent,
         transparent var(--squareSize),
@@ -142,8 +147,11 @@ import Box5 from "../Box/Box5.astro";
         transparent var(--squareSize),
         var(--grid-color) var(--squareSize),
         var(--grid-color) calc(var(--squareSize) + var(--strokeWidth))
-      ),
-      linear-gradient(180deg, rgb(255, 255, 255) 0%, var(--bg-color) 100%);
+      ), */ linear-gradient(
+      180deg,
+      rgb(255, 255, 255) 0%,
+      var(--bg-color) 100%
+    );
 
     border: 1px solid rgb(201, 201, 201);
 

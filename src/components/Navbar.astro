@@ -1,15 +1,22 @@
 <nav
   class="bg-white fixed top-[40px] left-1/2 flex gap-x-16 translate-x-[-50%] z-100 text-black px-6 py-4 rounded-3xl navbar font-[500] items-center justify-between"
 >
-  <div class="rounded-full bg-orange-400 size-10"></div>
+  <div class="rounded-full bg-orange-400 size-10" id="home-link"></div>
   <div class="flex gap-8">
     <a href="#about">About</a>
     <a href="#works">Works</a>
     <a href="#services">Services</a>
-    <a href="#playground">Playground</a>
     <a href="#testimonials">Testimonials</a>
   </div>
 </nav>
+
+<script>
+  const homeLink = document.getElementById("home-link")!;
+  homeLink.addEventListener("click", () => {
+    // Navigate to /
+    window.location.href = "/";
+  });
+</script>
 
 <style>
   .navbar {

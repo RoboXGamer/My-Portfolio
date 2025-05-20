@@ -1,0 +1,53 @@
+---
+import PaperBG from "../PaperBG.astro";
+---
+
+<div class="w-full h-screen p-8 pb-20 px-32">
+  <div class="grid place-items-center h-full relative">
+    <div class="absolute inset-0 -z-1">
+      <PaperBG />
+    </div>
+    <p class="split | leading-tight text-5xl max-w-[30ch] text-center">
+      We help startups and enterprise to establish an emotional connection
+      between their products and happy engaged customers
+    </p>
+  </div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { SplitText } from "gsap/SplitText";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+  SplitText.create(".split", {
+    type: "lines,words",
+    autoSplit: true,
+    onSplit: (self) => {
+      gsap.set(self.words, { opacity: "20%" });
+      gsap.to(self.words, {
+        scrollTrigger: {
+          trigger: ".split",
+          start: "bottom bottom",
+          end: "center center",
+          scrub: true,
+        },
+        opacity: 1,
+        stagger: 1,
+      });
+      return gsap.from(self.lines, {
+        scrollTrigger: {
+          trigger: ".split",
+          start: "bottom bottom",
+          end: "center center",
+          scrub: true,
+        },
+
+        y: 100,
+        opacity: 0,
+        stagger: 0.05,
+      });
+    },
+  });
+</script>

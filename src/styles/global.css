@@ -15,6 +15,4 @@ html {
 }
 body {
   background-color: #ffffff;
-  display: grid;
-  grid-template-columns: 1fr;
 }

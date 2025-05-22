@@ -1,5 +1,4 @@
-<div id="box-container2" class="box-container">
-  <svg
+<svg
     width="270"
     height="71"
     viewBox="0 0 270 71"
@@ -220,16 +219,3 @@
       </clipPath>
     </defs>
   </svg>
-</div>
-
-<script>
-  import { gsap } from "gsap";
-
-  import { Draggable } from "gsap/Draggable";
-
-  gsap.registerPlugin(Draggable);
-  Draggable.create("#box-container2", {
-    bounds: document.getElementById("card-container"),
-    inertia: true,
-  });
-</script>

@@ -2,10 +2,42 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Sections/Hero.astro";
 import Section2 from "../components/Sections/Section2.astro";
+import WorkCard from "../components/WorkCard.astro";
 ---
 
 <Layout>
   <Hero />
   <Section2 />
-  <section class="w-full h-screen bg-red-200">TEST</section>
+  <!-- <section class="h-screen bg-red-400">TEST</section>   -->
+
+  <WorkCard
+    title="BlockVault"
+    subTitle="Estonia, Self-funded"
+    description="A secure platform for cryptocurrency users to earn interest, borrow, and exchange digital assets. With enhanced infrastructure, users can protect their investments while engaging in the decentralized finance (DeFi) ecosystem."
+    imgSrc="test.avif"
+  />
+  <WorkCard
+    title="TaskFlow"
+    subTitle="USA, Venture Capital"
+    description="Revolutionize how teams manage tasks and deadlines by integrating real-time project tracking, AI-assisted insights, and seamless communication. Stay focused with context-aware notifications and updates to enhance collaboration."
+    imgSrc="https://framerusercontent.com/images/gYQDgKjRc49WkzJYlfnusNLSObo.png"
+  />
+  <WorkCard
+    title="DisputeFox"
+    subTitle="Switzerland, Angel Investors"
+    description="A decentralized platform designed for secure crypto asset management, allowing users to buy, sell, and borrow digital assets while ensuring top-tier protection and compliance with privacy regulations."
+    imgSrc="https://framerusercontent.com/images/qMJ1eOGI6KqH3EjLwj4wTqRUT0.png"
+  />
+  <WorkCard
+    title="MindLink"
+    subTitle="Singapore, Self-funded "
+    description="A platform to help users connect, share knowledge, and collaborate on ideas with the help of AI-powered insights. Users can join conversations, brainstorm, and access curated content tailored to their professional and personal interests."
+    imgSrc="https://framerusercontent.com/images/RdBu5uyrv7rEdbWwTGPkXqBmWMo.png"
+  />
+  <WorkCard
+    title="NoteSphere"
+    subTitle="Dubai, Angel Investors"
+    description="Streamline your workflow by capturing, organizing, and sharing notes seamlessly. Collaborate with peers in real-time and enhance productivity using integrated AI suggestions for note-taking and task management."
+    imgSrc="https://framerusercontent.com/images/RUGOoLXzHgBmYNmtj1CGsCpb2tc.png"
+  />
 </Layout>

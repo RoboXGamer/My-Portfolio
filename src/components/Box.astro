@@ -1,0 +1,19 @@
+---
+const { src, width, height } = Astro.props;
+---
+
+<div class="box-container">
+  <img src={src} width={width} height={height} />
+</div>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { Draggable } from "gsap/Draggable";
+
+  gsap.registerPlugin(Draggable);
+  Draggable.create(".box-container", {
+    bounds: document.getElementById("card-container"),
+    inertia: true,
+  });
+</script>

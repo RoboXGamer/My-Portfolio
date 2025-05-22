@@ -1,5 +1,4 @@
-<div id="box-container1" class="box-container">
-  <svg
+<svg
     xmlns="http://www.w3.org/2000/svg"
     width="226"
     height="63"
@@ -187,16 +186,3 @@
       </clipPath>
     </defs>
   </svg>
-</div>
-
-<script>
-  import { gsap } from "gsap";
-
-  import { Draggable } from "gsap/Draggable";
-
-  gsap.registerPlugin(Draggable);
-  Draggable.create("#box-container1", {
-    bounds: document.getElementById("card-container"),
-    inertia: true,
-  });
-</script>

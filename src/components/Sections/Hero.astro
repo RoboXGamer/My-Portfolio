@@ -1,21 +1,25 @@
 ---
 import Scribble from "../Scribble.astro";
 import ScribbleLine from "../ScribbleLine.astro";
-import Box1 from "../Box/Box1.astro";
-import Box2 from "../Box/Box2.astro";
-import Box3 from "../Box/Box3.astro";
-import Box4 from "../Box/Box4.astro";
-import Box5 from "../Box/Box5.astro";
-import Grid from "../Grid.astro";
+import GridBG from "../GridBG.astro";
+import Box from "../Box.astro";
+import Svg1 from "../../assets/icons/application.svg";
+import Svg2 from "../../assets/icons/visual.svg";
+import Svg3 from "../../assets/icons/design.svg";
+import Svg4 from "../../assets/icons/website.svg";
+import Svg5 from "../../assets/icons/branding.svg";
+import Button from "../Button.astro";
+
+const svgs = [Svg1, Svg2, Svg3, Svg4, Svg5];
 ---
 
 <main class="p-4 flex justify-center">
   <div
-    class="w-full grid place-content-center place-items-center leading-tight text-[5vw] pt-[200px] pb-[100px] max-w-[1400px] bg-gr rounded-4xl relative z-0"
+    class="gray-shadow-border gray-gradient | w-full grid place-content-center place-items-center leading-tight text-[5vw] pt-[200px] pb-[100px] max-w-[1400px] rounded-4xl relative z-0"
     id="card-container"
   >
     <div class="absolute inset-0 -z-1">
-      <Grid />
+      <GridBG isMasked isTranslated />
     </div>
     <div class="relative h-full">
       <p class="font-semibold tracking-tighter">Product Designer</p>
@@ -30,10 +34,8 @@ import Grid from "../Grid.astro";
       </div>
     </div>
     <div class="flex gap-x-4 place-items-center my-6">
-      <button
-        class="bg-orange-gr text-white rounded-xl px-6 py-3 font-semibold text-xl flex gap-2"
-      >
-        <div
+      <Button
+        ><div
           class="size-[12px] place-self-center"
           style="background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(206, 206, 206) 100%);border-radius: 50px;box-shadow: rgb(195, 195, 195) 0px 1px 0.5px 0px inset;opacity: 1;"
         >
@@ -45,8 +47,8 @@ import Grid from "../Grid.astro";
               d="M1 5.25a.75.75 0 0 0 0 1.5v-1.5Zm16.53 1.28a.75.75 0 0 0 0-1.06L12.757.697a.75.75 0 0 0-1.06 1.06L15.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06L17.53 6.53ZM1 6.75h16v-1.5H1v1.5Z"
               fill="#F4F4F4"></path></svg
           >
-        </div>
-      </button>
+        </div></Button
+      >
       <button
         class="bg-black-gr text-white rounded-xl px-6 py-3 font-semibold text-xl"
       >
@@ -54,11 +56,7 @@ import Grid from "../Grid.astro";
       </button>
     </div>
     <div class="relative grid grid-cols-3 gap-4">
-      <Box1 />
-      <Box2 />
-      <Box3 />
-      <Box4 />
-      <Box5 />
+      {svgs.map((svg) => <Box {...svg} />)}
     </div>
   </div>
 </main>
@@ -84,17 +82,7 @@ import Grid from "../Grid.astro";
     initial-value: rgb(120, 120, 120);
     inherits: false;
   }
-  @property --myColor3 {
-    syntax: "<color>";
-    initial-value: rgb(255, 129, 19);
-    inherits: false;
-  }
 
-  @property --myColor4 {
-    syntax: "<color>";
-    initial-value: rgb(255, 159, 56);
-    inherits: false;
-  }
   .bg-black-gr {
     background: linear-gradient(var(--myColor1) 0%, var(--myColor2) 100%);
     box-shadow:
@@ -110,53 +98,5 @@ import Grid from "../Grid.astro";
   .bg-black-gr:hover {
     --myColor1: rgb(120, 120, 120);
     --myColor2: rgb(18, 18, 18);
-  }
-  .bg-orange-gr {
-    background: linear-gradient(var(--myColor3) 0%, var(--myColor4) 100%);
-    box-shadow:
-      rgba(255, 129, 19, 0.02) 0px 72px 29px 0px,
-      rgba(255, 129, 19, 0.08) 0px 40px 24px 0px,
-      rgba(255, 129, 19, 0.14) 0px 18px 18px 0px,
-      rgba(255, 129, 19, 0.17) 0px 4px 10px 0px;
-
-    transition:
-      --myColor3 0.5s,
-      --myColor4 0.5s;
-  }
-  .bg-orange-gr:hover {
-    --myColor3: rgb(255, 159, 56);
-    --myColor4: rgb(255, 129, 19);
-  }
-
-  .bg-gr {
-    --bg-color: rgb(240, 240, 240);
-    --grid-color: rgba(0, 0, 0, 0.15);
-    --strokeWidth: 2px;
-    --squareSize: 65px;
-    background-image: 
-    /* radial-gradient(transparent 0%, var(--bg-color) 50%),
-      repeating-linear-gradient(
-        transparent,
-        transparent var(--squareSize),
-        var(--grid-color) var(--squareSize),
-        var(--grid-color) calc(var(--squareSize) + var(--strokeWidth))
-      ),
-      repeating-linear-gradient(
-        to right,
-        transparent,
-        transparent var(--squareSize),
-        var(--grid-color) var(--squareSize),
-        var(--grid-color) calc(var(--squareSize) + var(--strokeWidth))
-      ), */ linear-gradient(
-      180deg,
-      rgb(255, 255, 255) 0%,
-      var(--bg-color) 100%
-    );
-
-    border: 1px solid rgb(201, 201, 201);
-
-    box-shadow:
-      inset 0 -8px 0.5px rgba(188, 188, 188, 0.302),
-      inset 0 2px 0.5px 0 var(--color-white);
   }
 </style>

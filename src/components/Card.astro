@@ -1,0 +1,15 @@
+---
+import GridBG from "./GridBG.astro";
+---
+
+<div
+  class="gray-shadow-border | relative aspect-[16/7] max-w-[1400px] mx-auto z-0 overflow-hidden m-12 rounded-[2.25rem]"
+>
+  <div class="-z-1 absolute inset-0">
+    <div class="absolute -inset-[20%]">
+      <GridBG columnCount="15" />
+    </div>
+    <div class="gray-gradient | absolute -inset-0 opacity-80"></div>
+  </div>
+  <slot />
+</div>

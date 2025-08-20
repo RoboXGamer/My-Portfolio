@@ -5,46 +5,48 @@ import Button from "./Button.astro";
 const { title, subTitle = "", description, imgSrc } = Astro.props;
 ---
 
-<Card>
-  <div class="main-grid">
-    <div class="">
-      <div class="flex justify-center gap-6 h-full flex-col px-12">
-        <h2 class="text-3xl font-bold">{title}</h2>
-        <p class="text-2xl text-gray">{subTitle}</p>
-        <p class="text-md font-bold mt-4">Project Description:</p>
-        <p class="font-[500] max-w-[90%]">
-          {description}
-        </p>
-        <Button size="sm">See Case Study</Button>
+<div class="h-screen grid place-content-center | work-card">
+  <Card>
+    <div class="main-grid">
+      <div class="">
+        <div class="flex justify-center gap-6 h-full flex-col px-12">
+          <h2 class="text-3xl font-bold">{title}</h2>
+          <p class="text-2xl text-gray">{subTitle}</p>
+          <p class="text-md font-bold mt-4">Project Description:</p>
+          <p class="font-[500] max-w-[90%]">
+            {description}
+          </p>
+          <Button size="sm">See Case Study</Button>
+        </div>
       </div>
-    </div>
-    <div class="">
-      <div class="grid place-items-center h-full p-6">
-        <div class="size-full rounded-[1rem] overflow-hidden">
-          <img src={imgSrc} alt="" />
+      <div class="">
+        <div class="grid place-items-center h-full p-6">
+          <div class="size-full rounded-[1rem] overflow-hidden">
+            <img src={imgSrc} alt="" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <style>
-    .main-grid {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1.2fr 2fr;
-      grid-template-rows: 1fr;
-      gap: 1rem;
-    }
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-  </style>
-</Card>
+    <style>
+      .main-grid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1.2fr 2fr;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    </style>
+  </Card>
+</div>
 
 <style>
   .text-gray {

@@ -1,0 +1,52 @@
+<svg
+  class="absolute bottom-0 left-1/2 -translate-x-1/2 -top-2"
+  width="329"
+  height="23"
+  viewBox="0 0 324 26"
+>
+  <path
+    id="scribble2a"
+    d="M 3 8.888 C 35.952 5.81 133.736 0.577 261.25 4.27"
+    stroke="rgb(255,118,44)"
+    stroke-width="5"
+    stroke-linecap="round"
+    fill="transparent"
+  ></path>
+  <path
+    id="scribble2b"
+    d="M 74.424 17.906 C 97.844 14.423 167.93 6.858 260.918 4.463"
+    stroke="rgb(255,118,44)"
+    stroke-width="5"
+    stroke-linecap="round"
+    fill="transparent"
+  ></path>
+  <path
+    id="scribble2c"
+    d="M 75.199 17.843 C 106.88 16.158 200.315 14.865 320.604 23.164"
+    stroke="rgb(255,118,44)"
+    stroke-width="5"
+    stroke-linecap="round"
+    fill="transparent"
+  ></path>
+</svg>
+
+<script>
+  import { gsap } from "gsap";
+  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+  gsap.registerPlugin(DrawSVGPlugin);
+
+  // Animate all three paths with a slight stagger
+  gsap.fromTo(
+    ["#scribble2a", "#scribble2b", "#scribble2c"], // Select all three IDs
+    { drawSVG: "0%" },
+    {
+      duration: 1, // Shorter duration per segment
+      repeat: -1,
+      yoyo: true,
+      repeatDelay: 1,
+      drawSVG: "100%",
+      stagger: 1, // Stagger the start times for each path
+      ease: "power1.inOut",
+    }
+  );
+</script>

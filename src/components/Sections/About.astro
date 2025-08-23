@@ -2,24 +2,34 @@
 import Scribble2 from "../Scribble2.astro";
 ---
 
-<div class="grid place-content-center p-32">
-  <section id="about" class="w-full max-w-7xl flex flex-col items-center gap-5">
-    <div class="relative w-full max-w-[600px] h-[450px] mb-8">
-      <div class="absolute top-[58%] left-[65%] -translate-x-1/2 -translate-y-1/2 rotate-[15deg] w-[290px] h-[300px] border border-gray-300 bg-gradient-to-b from-white to-[#fafafa] rounded-[17px] shadow-[inset_0px_-3.51px_0.35px_0px_rgba(188,188,188,0.3)] overflow-hidden p-3">
+<div class="grid place-content-center p-8 md:p-16 lg:p-32">
+  <section id="about" class="flex w-full max-w-7xl flex-col items-center gap-5">
+    <div
+      class="relative mb-8 h-[250px] w-full max-w-[600px] sm:h-[350px] md:h-[450px]"
+    >
+      <div
+        class="absolute top-[58%] left-[65%] h-[200px] w-[190px] -translate-x-1/2 -translate-y-1/2 rotate-[15deg] overflow-hidden rounded-[17px] border border-gray-300 bg-gradient-to-b from-white to-[#fafafa] p-3 shadow-[inset_0px_-3.51px_0.35px_0px_rgba(188,188,188,0.3)] sm:h-[250px] sm:w-[240px] md:h-[300px] md:w-[290px]"
+      >
         <img
           src="https://framerusercontent.com/images/MzLHugGNcS9QpzwIXYLsrWiWSU.png"
           alt="Man working on laptop"
-          class="w-full h-full object-cover rounded-[11px]"
+          class="h-full w-full rounded-[11px] object-cover"
         />
       </div>
-      <div class="absolute top-[41%] left-[35%] -translate-x-1/2 -translate-y-1/2 -rotate-[15deg] w-[290px] h-[300px] border border-gray-300 bg-gradient-to-b from-white to-[#fafafa] rounded-[17px] shadow-[inset_0px_-3.51px_0.35px_0px_rgba(188,188,188,0.3)] overflow-hidden p-3">
+      <div
+        class="absolute top-[41%] left-[35%] h-[200px] w-[190px] -translate-x-1/2 -translate-y-1/2 -rotate-[15deg] overflow-hidden rounded-[17px] border border-gray-300 bg-gradient-to-b from-white to-[#fafafa] p-3 shadow-[inset_0px_-3.51px_0.35px_0px_rgba(188,188,188,0.3)] sm:h-[250px] sm:w-[240px] md:h-[300px] md:w-[290px]"
+      >
         <img
           src="https://framerusercontent.com/images/GwacDOLnwOUtjFiLQUmSywY0mjw.png"
           alt="Man portrait"
-          class="w-full h-full object-cover rounded-[11px]"
+          class="h-full w-full rounded-[11px] object-cover"
         />
       </div>
-      <svg class="absolute top-[14%] left-[2.5%] -translate-x-1/2 -translate-y-1/2" width="60" height="75" viewBox="0 0 56 70">
+      <svg
+        class="absolute top-[14%] left-[2.5%] w-[40px] -translate-x-1/2 -translate-y-1/2 max-md:hidden md:w-[60px]"
+        height="75"
+        viewBox="0 0 56 70"
+      >
         <path
           d="M 29.185 3.359 C 27.75 16.033 20.505 41.38 3 41.38 M 29.185 3 C 30.62 11.13 37.865 27.391 55.37 27.391 C 37.865 27.391 30.62 55.131 29.185 69 C 27.75 59.913 20.505 41.74 3 41.74"
           stroke="rgb(255,189,46)"
@@ -28,20 +38,30 @@ import Scribble2 from "../Scribble2.astro";
           fill="transparent"></path>
       </svg>
     </div>
-    <div class="text-center max-w-[710px]">
-      <h2 class="text-[72px] font-semibold tracking-[-0.04em] leading-[1.2em]">Reserved,</h2>
+    <div class="max-w-[710px] px-4 text-center">
+      <h2
+        class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
+      >
+        Reserved,
+      </h2>
       <div class="relative">
-        <h2 class="text-[72px] font-semibold tracking-[-0.04em] leading-[1.2em]">But Far From Ordinary!</h2>
+        <h2
+          class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
+        >
+          But Far From Ordinary!
+        </h2>
         <Scribble2 />
       </div>
-      <p class="text-xl leading-[1.6em] tracking-[-0.01em] mt-8">
-        Hailing from Canada and thriving in the heart of LA, I've spent the last 7
-        years partnering with visionary founders and VC-backed startups to craft
-        brands, websites, apps, and marketing that leave a lasting impression.<br />
+      <p
+        class="mt-8 text-base leading-[1.6em] tracking-[-0.01em] md:text-lg lg:text-xl"
+      >
+        Driven by a genuine fascination for technology, I am actively building
+        expertise in software development and data analysis, with an ambition to
+        architect innovative solutions that shape our digital future.<br />
         <br />My mission? To transform big ideas into compelling digital
-        experiences that captivate users, elevate products, and catch the eyes of
-        investors. Together, we don't just tell stories – we create moments that
-        make your brand unforgettable.
+        experiences that captivate users, elevate products, and catch the eyes
+        of investors. Together, we don't just tell stories – we create moments
+        that make your brand unforgettable.
       </p>
     </div>
   </section>

@@ -1,12 +1,18 @@
 ---
-const { size = "xl" } = Astro.props;
-const sizeC = `text-${size}`;
+const { variant } = Astro.props;
+const vC = variant == "orange" ? "bg-orange-gr" : "bg-black-gr";
 ---
 
 <button
-  class=`bg-orange-gr text-white rounded-xl px-6 py-3 font-semibold flex gap-2 self-start ${sizeC}`
+  class=`${vC} text-white rounded-xl px-6 py-3 font-bold tracking-tight flex gap-2 md:gap-3 text-[0.75em] md:text-[1rem]`
 >
+  <div class="grid">
+    <slot name="1" />
+  </div>
   <slot />
+  <div class="grid">
+    <slot name="2" />
+  </div>
 </button>
 
 <style>
@@ -36,5 +42,34 @@ const sizeC = `text-${size}`;
   .bg-orange-gr:hover {
     --myColor3: rgb(255, 159, 56);
     --myColor4: rgb(255, 129, 19);
+  }
+
+  @property --myColor1 {
+    syntax: "<color>";
+    initial-value: rgb(18, 18, 18);
+    inherits: false;
+  }
+
+  @property --myColor2 {
+    syntax: "<color>";
+    initial-value: rgb(120, 120, 120);
+    inherits: false;
+  }
+
+  .bg-black-gr {
+    background: linear-gradient(var(--myColor1) 0%, var(--myColor2) 100%);
+    box-shadow:
+      rgba(0, 0, 0, 0.02) 0px 72px 29px 0px,
+      rgba(0, 0, 0, 0.08) 0px 40px 24px 0px,
+      rgba(0, 0, 0, 0.14) 0px 18px 18px 0px,
+      rgba(0, 0, 0, 0.17) 0px 4px 10px 0px;
+
+    transition:
+      --myColor1 0.5s,
+      --myColor2 0.5s;
+  }
+  .bg-black-gr:hover {
+    --myColor1: rgb(120, 120, 120);
+    --myColor2: rgb(18, 18, 18);
   }
 </style>

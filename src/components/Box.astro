@@ -1,8 +1,11 @@
 ---
-const { src, width, height } = Astro.props;
+const { src, width, height, x, y, rotate } = Astro.props;
 ---
 
-<div class="box-container">
+<div
+  class="box-container | absolute top-1/2 left-1/2 -translate-1/2 scale-[90%]"
+  style=`transform: translate3d(${x}px, ${y}px, 0px); rotate:${rotate}deg`
+>
   <img src={src} width={width} height={height} />
 </div>
 
@@ -15,5 +18,14 @@ const { src, width, height } = Astro.props;
   Draggable.create(".box-container", {
     bounds: document.getElementById("card-container"),
     inertia: true,
+  });
+</script>
+
+<script>
+  import { gsap } from "gsap";
+  gsap.from(`.box-container`, {
+    y: 100,
+    opacity: 0,
+    stagger: 0.05,
   });
 </script>

@@ -2,12 +2,14 @@
 import PaperBG from "../PaperBG.astro";
 ---
 
-<div class="h-screen w-full p-8 px-32 pb-20">
+<div class="h-screen w-full p-8 pb-20 md:px-32">
   <div class="relative grid h-full place-items-center">
     <div class="absolute inset-0 -z-1">
       <PaperBG />
     </div>
-    <p class="split | max-w-[30ch] text-center text-5xl leading-tight">
+    <p
+      class="split | max-w-[30ch] text-center text-[clamp(1.5rem,2.5vw,6rem)] leading-tight"
+    >
       I aim to develop intuitive and user-centric software solutions that bridge
       the gap between technology and human needs, ultimately fostering engaging
       and meaningful interactions.

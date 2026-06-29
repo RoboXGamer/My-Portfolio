@@ -1,6 +1,43 @@
 ---
 import WorkCard from "../WorkCard.astro";
+import ScribbleLine from "../ScribbleLine.astro";
 ---
+
+<!-- Works Section Title -->
+<div class="flex flex-col items-center justify-center py-16 md:py-24 px-4">
+  <!-- Emoji stickers container -->
+  <div class="relative mb-8 flex items-center justify-center gap-1">
+    <!-- Sticker 1 (🤩) -->
+    <div
+      class="w-20 h-20 md:w-24 md:h-24 bg-white border border-[#dbdbdb] rounded-[22%] shadow-[0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center -rotate-[15deg] animate-bob z-1"
+    >
+      <span class="text-4xl md:text-5xl select-none">🤩</span>
+    </div>
+    <!-- Sticker 2 (😍) -->
+    <div
+      class="w-20 h-20 md:w-24 md:h-24 bg-white border border-[#dbdbdb] rounded-[22%] shadow-[0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center rotate-[15deg] -ml-5 mt-4 animate-bob-delayed z-2"
+    >
+      <span class="text-4xl md:text-5xl select-none">😍</span>
+    </div>
+  </div>
+  <!-- Heading -->
+  <div class="max-w-[710px] text-center">
+    <h2
+      class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
+    >
+      Showcase of <span class="relative inline-block px-1">My,
+        <div class="works-scribble-wrapper absolute left-1/2 -translate-x-1/2 -bottom-[8px] md:-bottom-[12px] w-[115%]">
+          <ScribbleLine />
+        </div>
+      </span>
+    </h2>
+    <h2
+      class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px] mt-2"
+    >
+      Masterpieces
+    </h2>
+  </div>
+</div>
 
 <div id="works" class="relative">
   <div>
@@ -49,10 +86,33 @@ import WorkCard from "../WorkCard.astro";
     />
   </div>
 </div>
+<style>
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-15deg); }
+    50% { transform: translateY(-6px) rotate(-15deg); }
+  }
+  @keyframes bob-delayed {
+    0%, 100% { transform: translateY(0) rotate(15deg); }
+    50% { transform: translateY(-6px) rotate(15deg); }
+  }
+  .animate-bob {
+    animation: bob 2.2s ease-in-out infinite;
+  }
+  .animate-bob-delayed {
+    animation: bob-delayed 2.2s ease-in-out infinite 0.4s;
+  }
+  .works-scribble-wrapper svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
+
 
   const workCards = gsap.utils.toArray(".work-card") as HTMLElement[];
   const lastWorkCard = workCards[workCards.length - 1];
@@ -60,8 +120,8 @@ import WorkCard from "../WorkCard.astro";
   workCards.forEach((card, index) => {
     ScrollTrigger.create({
       trigger: card,
-      start: "top top",
-      end: "top top",
+      start: "top 20",
+      end: "top 20",
       endTrigger: lastWorkCard,
       scrub: true,
       pinSpacing: false,

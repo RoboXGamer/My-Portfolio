@@ -1,6 +1,6 @@
 ---
 import WorkCard from "../WorkCard.astro";
-import ScribbleLine from "../ScribbleLine.astro";
+import Scribble2 from "../Scribble2.astro";
 ---
 
 <!-- Works Section Title -->
@@ -25,11 +25,9 @@ import ScribbleLine from "../ScribbleLine.astro";
     <h2
       class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
     >
-      Showcase of <span class="relative inline-block px-1">My,
-        <div class="works-scribble-wrapper absolute left-1/2 -translate-x-1/2 -bottom-[8px] md:-bottom-[12px] w-[115%]">
-          <ScribbleLine />
-        </div>
-      </span>
+      <span class="relative inline-block px-1 works-title-span">Showcase
+        <Scribble2 />
+      </span> of My,
     </h2>
     <h2
       class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px] mt-2"
@@ -101,10 +99,18 @@ import ScribbleLine from "../ScribbleLine.astro";
   .animate-bob-delayed {
     animation: bob-delayed 2.2s ease-in-out infinite 0.4s;
   }
-  .works-scribble-wrapper svg {
-    width: 100%;
-    height: auto;
-    display: block;
+  .works-title-span svg {
+    width: 105% !important;
+    height: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: auto !important;
+    bottom: -6px !important;
+  }
+  @media (min-width: 768px) {
+    .works-title-span svg {
+      bottom: -10px !important;
+    }
   }
 </style>
 

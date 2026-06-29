@@ -27,56 +27,52 @@ import Scribble2 from "../Scribble2.astro";
   <div class="services-outer-container gray-shadow-border rounded-[1.5rem] md:rounded-[2.25rem] overflow-hidden bg-white p-4 md:p-8 max-w-[1400px] mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
       <!-- Card 1: I Worked with -->
-      <div class="services-card relative flex flex-col rounded-[1rem] md:rounded-[1.25rem] bg-[#f5f5f5] p-8 md:p-12 min-h-[400px] md:min-h-[500px] overflow-hidden">
-        <div class="relative z-10">
+      <div id="worked-with-card" class="services-card relative flex flex-col rounded-[1rem] md:rounded-[1.25rem] bg-[#f5f5f5] p-8 md:p-12 min-h-[480px] md:min-h-[550px] overflow-hidden">
+        <div class="relative z-10 select-none pointer-events-none">
           <h3 class="text-2xl md:text-[32px] font-semibold tracking-[-0.02em]">I Worked with:</h3>
           <p class="mt-2 text-sm md:text-base text-gray-500">I worked with different technologies and frameworks.</p>
         </div>
-        <!-- Floating Pills -->
-        <div class="absolute inset-0 p-8 md:p-12 pt-28 md:pt-32">
-          <div class="flex flex-wrap gap-2 md:gap-3 opacity-80">
-            <span class="services-pill bg-purple-100 text-purple-700">TypeScript</span>
-            <span class="services-pill bg-yellow-100 text-yellow-700">JavaScript</span>
-            <span class="services-pill bg-red-100 text-red-700">Java 21</span>
-            <span class="services-pill bg-orange-100 text-orange-700">HTML</span>
-            <span class="services-pill bg-cyan-100 text-cyan-700">CSS</span>
-            <span class="services-pill bg-blue-100 text-blue-700">React 19</span>
-            <span class="services-pill bg-orange-100 text-orange-700">Astro 5</span>
-            <span class="services-pill bg-rose-100 text-rose-700">NeoForge</span>
-            <span class="services-pill bg-violet-100 text-violet-700">Convex</span>
-            <span class="services-pill bg-pink-100 text-pink-700">PWA</span>
-            <span class="services-pill bg-teal-100 text-teal-700">Git</span>
-            <span class="services-pill bg-gray-100 text-gray-700">GitHub</span>
-            <span class="services-pill bg-green-100 text-green-700">Gradle</span>
-            <span class="services-pill bg-emerald-100 text-emerald-700">Netlify</span>
-          </div>
+        <!-- Floating Draggable Pills -->
+        <div class="absolute inset-0 select-none">
+          <span class="services-pill bg-[#faf5ff] text-[#7c3aed] border-[#c084fc] worked-with-pill" style="left: 8%; top: 38%; transform: rotate(-6deg);">TypeScript</span>
+          <span class="services-pill bg-[#fefdf0] text-[#ca8a04] border-[#fef08a] worked-with-pill" style="left: 45%; top: 40%; transform: rotate(8deg);">JavaScript</span>
+          <span class="services-pill bg-[#fef2f2] text-[#dc2626] border-[#fecaca] worked-with-pill" style="left: 75%; top: 36%; transform: rotate(-4deg);">Java 21</span>
+          <span class="services-pill bg-[#fff7ed] text-[#ea580c] border-[#ffedd5] worked-with-pill" style="left: 12%; top: 52%; transform: rotate(5deg);">HTML</span>
+          <span class="services-pill bg-[#ecfeff] text-[#0891b2] border-[#cffafe] worked-with-pill" style="left: 36%; top: 54%; transform: rotate(-8deg);">CSS</span>
+          <span class="services-pill bg-[#eff6ff] text-[#2563eb] border-[#dbeafe] worked-with-pill" style="left: 62%; top: 50%; transform: rotate(12deg);">React 19</span>
+          <span class="services-pill bg-[#fff7ed] text-[#ea580c] border-[#ffedd5] worked-with-pill" style="left: 8%; top: 68%; transform: rotate(-10deg);">Astro 5</span>
+          <span class="services-pill bg-[#fff1f2] text-[#e11d48] border-[#ffe4e6] worked-with-pill" style="left: 32%; top: 68%; transform: rotate(6deg);">NeoForge</span>
+          <span class="services-pill bg-[#f5f3ff] text-[#4f46e5] border-[#ddd6fe] worked-with-pill" style="left: 58%; top: 66%; transform: rotate(-3deg);">Convex</span>
+          <span class="services-pill bg-[#fdf2f8] text-[#db2777] border-[#fce7f3] worked-with-pill" style="left: 76%; top: 70%; transform: rotate(-12deg);">PWA</span>
+          <span class="services-pill bg-[#f0fdfa] text-[#0d9488] border-[#ccfbf1] worked-with-pill" style="left: 18%; top: 82%; transform: rotate(4deg);">Git</span>
+          <span class="services-pill bg-[#f9fafb] text-[#4b5563] border-[#e5e7eb] worked-with-pill" style="left: 45%; top: 82%; transform: rotate(-5deg);">GitHub</span>
+          <span class="services-pill bg-[#f0fdf4] text-[#16a34a] border-[#dcfce7] worked-with-pill" style="left: 72%; top: 84%; transform: rotate(8deg);">Gradle</span>
+          <span class="services-pill bg-[#ecfdf5] text-[#059669] border-[#d1fae5] worked-with-pill" style="left: 38%; top: 44%; transform: rotate(-2deg);">Netlify</span>
         </div>
       </div>
 
       <!-- Card 2: What I do -->
-      <div class="services-card relative flex flex-col rounded-[1rem] md:rounded-[1.25rem] bg-[#f5f5f5] p-8 md:p-12 min-h-[400px] md:min-h-[500px] overflow-hidden">
-        <div class="relative z-10">
+      <div id="what-i-do-card" class="services-card relative flex flex-col rounded-[1rem] md:rounded-[1.25rem] bg-[#f5f5f5] p-8 md:p-12 min-h-[480px] md:min-h-[550px] overflow-hidden">
+        <div class="relative z-10 select-none pointer-events-none">
           <h3 class="text-2xl md:text-[32px] font-semibold tracking-[-0.02em]">What I do:</h3>
           <p class="mt-2 text-sm md:text-base text-gray-500">There are some of my different areas of work.</p>
         </div>
-        <!-- Floating Pills -->
-        <div class="absolute inset-0 p-8 md:p-12 pt-28 md:pt-32">
-          <div class="flex flex-wrap gap-2 md:gap-3 opacity-80">
-            <span class="services-pill bg-orange-100 text-orange-700">Full-Stack Web Development</span>
-            <span class="services-pill bg-lime-100 text-lime-700">Minecraft Modding</span>
-            <span class="services-pill bg-pink-100 text-pink-700">PWA Development</span>
-            <span class="services-pill bg-blue-100 text-blue-700">Frontend Design</span>
-            <span class="services-pill bg-green-100 text-green-700">Real-Time Apps</span>
-            <span class="services-pill bg-indigo-100 text-indigo-700">Scroll Animations</span>
-            <span class="services-pill bg-red-100 text-red-700">Responsive Design</span>
-          </div>
+        <!-- Floating Draggable Pills -->
+        <div class="absolute inset-0 select-none">
+          <span class="services-pill bg-[#fff7ed] text-[#ea580c] border-[#ffedd5] what-i-do-pill" style="left: 10%; top: 40%; transform: rotate(-5deg);">Full-Stack Web Development</span>
+          <span class="services-pill bg-[#f7fee7] text-[#65a30d] border-[#ecfccb] what-i-do-pill" style="left: 55%; top: 38%; transform: rotate(8deg);">Minecraft Modding</span>
+          <span class="services-pill bg-[#fdf2f8] text-[#db2777] border-[#fce7f3] what-i-do-pill" style="left: 15%; top: 56%; transform: rotate(10deg);">PWA Development</span>
+          <span class="services-pill bg-[#eff6ff] text-[#2563eb] border-[#dbeafe] what-i-do-pill" style="left: 60%; top: 54%; transform: rotate(-6deg);">Frontend Design</span>
+          <span class="services-pill bg-[#f0fdf4] text-[#16a34a] border-[#dcfce7] what-i-do-pill" style="left: 35%; top: 68%; transform: rotate(-8deg);">Real-Time Apps</span>
+          <span class="services-pill bg-[#eef2ff] text-[#4f46e5] border-[#e0e7ff] what-i-do-pill" style="left: 8%; top: 80%; transform: rotate(12deg);">Scroll Animations</span>
+          <span class="services-pill bg-[#fef2f2] text-[#dc2626] border-[#fecaca] what-i-do-pill" style="left: 52%; top: 82%; transform: rotate(-4deg);">Responsive Design</span>
         </div>
       </div>
     </div>
 
     <!-- Tools Section -->
     <div class="flex flex-col items-center mt-8 md:mt-12 mb-4">
-      <p class="text-sm md:text-base text-gray-500 mb-4 md:mb-6">The Tools I use!</p>
+      <p class="text-sm md:text-base text-gray-500 mb-4 md:mb-6 select-none">The Tools I use!</p>
       <div class="flex flex-wrap justify-center gap-4 md:gap-5">
         <div class="tool-icon" title="VS Code">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="w-8 h-8 md:w-10 md:h-10" />
@@ -106,17 +102,29 @@ import Scribble2 from "../Scribble2.astro";
 
 <style>
   .services-pill {
+    position: absolute;
     display: inline-flex;
     align-items: center;
-    padding: 6px 16px;
+    padding: 4px 12px;
     border-radius: 999px;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
     white-space: nowrap;
-    transition: transform 0.2s ease;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04), inset 0 2px 0px rgba(255, 255, 255, 0.6);
+    border: 1.5px solid currentColor;
+    touch-action: none; /* crucial for draggable touch interaction */
+    z-index: 20;
   }
-  .services-pill:hover {
-    transform: translateY(-2px);
+  @media (min-width: 768px) {
+    .services-pill {
+      padding: 6px 18px;
+      font-size: 14px;
+    }
+  }
+  .services-pill:active {
+    cursor: grabbing;
   }
 
   .tool-icon {
@@ -156,3 +164,35 @@ import Scribble2 from "../Scribble2.astro";
     }
   }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { Draggable } from "gsap/Draggable";
+  gsap.registerPlugin(Draggable);
+
+  // Initialize Draggable for worked-with pills
+  Draggable.create(".worked-with-pill", {
+    bounds: document.getElementById("worked-with-card"),
+    inertia: true,
+    edgeResistance: 0.65,
+    onDragStart: function() {
+      gsap.to(this.target, { scale: 1.08, duration: 0.2 });
+    },
+    onDragEnd: function() {
+      gsap.to(this.target, { scale: 1, duration: 0.2 });
+    }
+  });
+
+  // Initialize Draggable for what-i-do pills
+  Draggable.create(".what-i-do-pill", {
+    bounds: document.getElementById("what-i-do-card"),
+    inertia: true,
+    edgeResistance: 0.65,
+    onDragStart: function() {
+      gsap.to(this.target, { scale: 1.08, duration: 0.2 });
+    },
+    onDragEnd: function() {
+      gsap.to(this.target, { scale: 1, duration: 0.2 });
+    }
+  });
+</script>

@@ -4,20 +4,20 @@ import Scribble2 from "../Scribble2.astro";
 ---
 
 <!-- Works Section Title -->
-<div class="flex flex-col items-center justify-center py-16 md:py-24 px-4">
+<div class="flex flex-col items-center justify-center px-4 py-16 md:py-24">
   <!-- Emoji stickers container -->
   <div class="relative mb-8 flex items-center justify-center gap-1">
     <!-- Sticker 1 (🤩) -->
     <div
-      class="w-20 h-20 md:w-24 md:h-24 bg-white border border-[#dbdbdb] rounded-[22%] shadow-[0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center -rotate-[15deg] animate-bob z-1"
+      class="animate-bob z-1 flex h-20 w-20 -rotate-[15deg] items-center justify-center rounded-[22%] border border-[#dbdbdb] bg-white shadow-[0_8px_20px_rgba(0,0,0,0.08)] md:h-24 md:w-24"
     >
-      <span class="text-4xl md:text-5xl select-none">🤩</span>
+      <span class="text-4xl select-none md:text-5xl">🤩</span>
     </div>
     <!-- Sticker 2 (😍) -->
     <div
-      class="w-20 h-20 md:w-24 md:h-24 bg-white border border-[#dbdbdb] rounded-[22%] shadow-[0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center rotate-[15deg] -ml-5 mt-4 animate-bob-delayed z-2"
+      class="animate-bob-delayed z-2 mt-4 -ml-5 flex h-20 w-20 rotate-[15deg] items-center justify-center rounded-[22%] border border-[#dbdbdb] bg-white shadow-[0_8px_20px_rgba(0,0,0,0.08)] md:h-24 md:w-24"
     >
-      <span class="text-4xl md:text-5xl select-none">😍</span>
+      <span class="text-4xl select-none md:text-5xl">😍</span>
     </div>
   </div>
   <!-- Heading -->
@@ -25,12 +25,13 @@ import Scribble2 from "../Scribble2.astro";
     <h2
       class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
     >
-      <span class="relative inline-block px-1 works-title-span">Showcase
+      <span class="works-title-span relative inline-block px-1"
+        >Showcase
         <Scribble2 />
       </span> of My,
     </h2>
     <h2
-      class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px] mt-2"
+      class="mt-2 text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
     >
       Masterpieces
     </h2>
@@ -86,12 +87,22 @@ import Scribble2 from "../Scribble2.astro";
 </div>
 <style>
   @keyframes bob {
-    0%, 100% { transform: translateY(0) rotate(-15deg); }
-    50% { transform: translateY(-6px) rotate(-15deg); }
+    0%,
+    100% {
+      transform: translateY(0) rotate(-15deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(-15deg);
+    }
   }
   @keyframes bob-delayed {
-    0%, 100% { transform: translateY(0) rotate(15deg); }
-    50% { transform: translateY(-6px) rotate(15deg); }
+    0%,
+    100% {
+      transform: translateY(0) rotate(15deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(15deg);
+    }
   }
   .animate-bob {
     animation: bob 2.2s ease-in-out infinite;
@@ -99,17 +110,17 @@ import Scribble2 from "../Scribble2.astro";
   .animate-bob-delayed {
     animation: bob-delayed 2.2s ease-in-out infinite 0.4s;
   }
-  .works-title-span svg {
+  .works-title-span :global(svg) {
     width: 105% !important;
     height: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     top: auto !important;
-    bottom: -6px !important;
+    bottom: -10px !important;
   }
   @media (min-width: 768px) {
-    .works-title-span svg {
-      bottom: -10px !important;
+    .works-title-span :global(svg) {
+      bottom: -16px !important;
     }
   }
 </style>
@@ -118,7 +129,6 @@ import Scribble2 from "../Scribble2.astro";
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
-
 
   const workCards = gsap.utils.toArray(".work-card") as HTMLElement[];
   const lastWorkCard = workCards[workCards.length - 1];

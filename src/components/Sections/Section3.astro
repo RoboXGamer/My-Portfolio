@@ -1,0 +1,164 @@
+---
+import Scribble2 from "../Scribble2.astro";
+---
+
+<section id="services" class="relative px-4 md:px-16 lg:px-32 py-16 md:py-24">
+  <!-- Title Area -->
+  <div class="flex flex-col items-center text-center max-w-[900px] mx-auto mb-16 md:mb-24">
+    <h2
+      class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
+    >
+      Your needs, my <span class="relative inline-block services-title-span">Expertise
+        <Scribble2 />
+      </span>
+    </h2>
+    <h2
+      class="text-4xl leading-[1.2em] font-semibold tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-[72px]"
+    >
+      —let's make it happen.
+    </h2>
+    <p class="mt-8 text-base leading-[1.6em] tracking-[-0.01em] md:text-lg lg:text-xl max-w-[750px]">
+      I offer services in web development, UI/UX design, and full-stack application
+      development—delivering tailored solutions that bring your vision to life.
+    </p>
+  </div>
+
+  <!-- Cards Container -->
+  <div class="services-outer-container gray-shadow-border rounded-[1.5rem] md:rounded-[2.25rem] overflow-hidden bg-white p-4 md:p-8 max-w-[1400px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+      <!-- Card 1: I Worked with -->
+      <div class="services-card relative flex flex-col rounded-[1rem] md:rounded-[1.25rem] bg-[#f5f5f5] p-8 md:p-12 min-h-[400px] md:min-h-[500px] overflow-hidden">
+        <div class="relative z-10">
+          <h3 class="text-2xl md:text-[32px] font-semibold tracking-[-0.02em]">I Worked with:</h3>
+          <p class="mt-2 text-sm md:text-base text-gray-500">I worked with different technologies and frameworks.</p>
+        </div>
+        <!-- Floating Pills -->
+        <div class="absolute inset-0 p-8 md:p-12 pt-28 md:pt-32">
+          <div class="flex flex-wrap gap-2 md:gap-3 opacity-80">
+            <span class="services-pill bg-blue-100 text-blue-700">React</span>
+            <span class="services-pill bg-orange-100 text-orange-700">Astro</span>
+            <span class="services-pill bg-green-100 text-green-700">Node.js</span>
+            <span class="services-pill bg-purple-100 text-purple-700">TypeScript</span>
+            <span class="services-pill bg-yellow-100 text-yellow-700">JavaScript</span>
+            <span class="services-pill bg-pink-100 text-pink-700">SolidJS</span>
+            <span class="services-pill bg-cyan-100 text-cyan-700">TailwindCSS</span>
+            <span class="services-pill bg-red-100 text-red-700">Java</span>
+            <span class="services-pill bg-indigo-100 text-indigo-700">Python</span>
+            <span class="services-pill bg-emerald-100 text-emerald-700">MongoDB</span>
+            <span class="services-pill bg-amber-100 text-amber-700">Firebase</span>
+            <span class="services-pill bg-violet-100 text-violet-700">Convex</span>
+            <span class="services-pill bg-teal-100 text-teal-700">Git</span>
+            <span class="services-pill bg-lime-100 text-lime-700">Minecraft Modding</span>
+            <span class="services-pill bg-rose-100 text-rose-700">NeoForge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: What I do -->
+      <div class="services-card relative flex flex-col rounded-[1rem] md:rounded-[1.25rem] bg-[#f5f5f5] p-8 md:p-12 min-h-[400px] md:min-h-[500px] overflow-hidden">
+        <div class="relative z-10">
+          <h3 class="text-2xl md:text-[32px] font-semibold tracking-[-0.02em]">What I do:</h3>
+          <p class="mt-2 text-sm md:text-base text-gray-500">There are some of my different areas of work.</p>
+        </div>
+        <!-- Floating Pills -->
+        <div class="absolute inset-0 p-8 md:p-12 pt-28 md:pt-32">
+          <div class="flex flex-wrap gap-2 md:gap-3 opacity-80">
+            <span class="services-pill bg-orange-100 text-orange-700">Web Development</span>
+            <span class="services-pill bg-blue-100 text-blue-700">UI/UX Design</span>
+            <span class="services-pill bg-green-100 text-green-700">Full-Stack Apps</span>
+            <span class="services-pill bg-purple-100 text-purple-700">API Development</span>
+            <span class="services-pill bg-pink-100 text-pink-700">Frontend Design</span>
+            <span class="services-pill bg-cyan-100 text-cyan-700">Database Design</span>
+            <span class="services-pill bg-yellow-100 text-yellow-700">Performance Optimization</span>
+            <span class="services-pill bg-red-100 text-red-700">Responsive Design</span>
+            <span class="services-pill bg-indigo-100 text-indigo-700">Animation</span>
+            <span class="services-pill bg-emerald-100 text-emerald-700">PWA Development</span>
+            <span class="services-pill bg-amber-100 text-amber-700">SEO</span>
+            <span class="services-pill bg-violet-100 text-violet-700">Minecraft Mods</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools Section -->
+    <div class="flex flex-col items-center mt-8 md:mt-12 mb-4">
+      <p class="text-sm md:text-base text-gray-500 mb-4 md:mb-6">The Tools I use!</p>
+      <div class="flex flex-wrap justify-center gap-4 md:gap-5">
+        <div class="tool-icon" title="VS Code">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="w-8 h-8 md:w-10 md:h-10" />
+        </div>
+        <div class="tool-icon" title="Git">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-8 h-8 md:w-10 md:h-10" />
+        </div>
+        <div class="tool-icon" title="Figma">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" class="w-8 h-8 md:w-10 md:h-10" />
+        </div>
+        <div class="tool-icon" title="React">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-8 h-8 md:w-10 md:h-10" />
+        </div>
+        <div class="tool-icon" title="TypeScript">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-8 h-8 md:w-10 md:h-10" />
+        </div>
+        <div class="tool-icon" title="TailwindCSS">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS" class="w-8 h-8 md:w-10 md:h-10" />
+        </div>
+        <div class="tool-icon" title="Node.js">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-8 h-8 md:w-10 md:h-10" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+  }
+  .services-pill:hover {
+    transform: translateY(-2px);
+  }
+
+  .tool-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgb(245, 245, 245);
+    border: 1px solid rgb(230, 230, 230);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+  }
+  .tool-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (min-width: 768px) {
+    .tool-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+    }
+  }
+
+  .services-title-span :global(svg) {
+    width: 105% !important;
+    height: auto !important;
+    top: auto !important;
+    bottom: -10px !important;
+  }
+  @media (min-width: 768px) {
+    .services-title-span :global(svg) {
+      bottom: -16px !important;
+    }
+  }
+</style>

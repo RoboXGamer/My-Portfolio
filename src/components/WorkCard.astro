@@ -2,7 +2,7 @@
 import Card from "./Card.astro";
 import Button from "./Button.astro";
 
-const { title, subTitle = "", description, imgSrc } = Astro.props;
+const { title, subTitle = "", description, imgSrc, githubUrl = "#" } = Astro.props;
 ---
 
 <div class="h-screen grid place-content-center | work-card">
@@ -16,7 +16,7 @@ const { title, subTitle = "", description, imgSrc } = Astro.props;
           <p class="font-[500] max-w-[90%]">
             {description}
           </p>
-          <Button size="sm">See Case Study</Button>
+          <a href={githubUrl} target="_blank"><Button size="sm">View on GitHub</Button></a>
         </div>
       </div>
       <div class="">
